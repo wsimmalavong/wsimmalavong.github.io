@@ -10,7 +10,7 @@
   </head>
   <body style = "background-color: palevioletred; width:100%; height: 100%">
 	
-    <audio id = "girl" controls autoplay>
+    <audio id = "girl">
       <source  src="girl.mp3" type="audio/mp3">
     </audio>
     <audio id = "yipee">
@@ -66,6 +66,8 @@
         $("#yay").toggle();
         var audio = document.getElementById("yipee");
         audio.play();
+        var audio = document.getElementById("girl");
+        audio.play();
         var duration = 15 * 1000;
         var animationEnd = Date.now() + duration;
         var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -92,6 +94,8 @@
         $(".cat").toggle();
         $("#yay").toggle();
         var audio = document.getElementById("yipee");
+        audio.play();
+        var audio = document.getElementById("girl");
         audio.play();
         var duration = 15 * 1000;
         var animationEnd = Date.now() + duration;
