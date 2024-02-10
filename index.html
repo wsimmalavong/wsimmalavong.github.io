@@ -10,8 +10,11 @@
   </head>
   <body style = "background-color: palevioletred; width:100%; height: 100%">
 	
-    <audio controls autoplay>
-      <source src="girl.mp3" type="audio/mp3">
+    <audio id = "girl" controls autoplay>
+      <source  src="girl.mp3" type="audio/mp3">
+    </audio>
+    <audio id = "yipee">
+      <source  src="yipee.mp3" type="audio/mp3">
     </audio>
     <div style = "text-align:center">
       <img class ="cat" src="cat.gif" alt="This is an animated gif image, but it does not move" style="display:none"/>
@@ -23,8 +26,7 @@
       <br>
       <button id = "no" class="btn btn-danger" type="submit">No</button>
       <button id = "yes" class="btn btn-success" type="submit">Yes</button>
-      <div class="heart heart-bg" style="display:none"></div>
-      <div class="heart heart-main" style="display:none"></div>
+      <h1 id = "yay" style="display:none">YAAYYYYYYYYYYYY SEE U SOON BB!!!!!!!! :D :D :D :D :D :D :D :D :D :D</h1>
     </div>
    
 
@@ -33,6 +35,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
       $(document).ready(function() {
+        var audio = document.getElementById("girl");
+        audio.volume = 0.2;
+        var audio = document.getElementById("yipee");
+        audio.volume = 0.2;
         $('#rose').animate({
           left: '250px',
           opacity: '0.5',
@@ -57,8 +63,9 @@
 
       $('#yes').on( "click", function() {
         $(".cat").toggle();
-        $(".heart heart-bg").toggle();
-        $(".heart heart-main").toggle();
+        $("#yay").toggle();
+        var audio = document.getElementById("yipee");
+        audio.play();
         var duration = 15 * 1000;
         var animationEnd = Date.now() + duration;
         var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -83,8 +90,9 @@
 
       $('#no').on( "click", function() {
         $(".cat").toggle();
-        $(".heart heart-bg").toggle();
-        $(".heart heart-main").toggle();
+        $("#yay").toggle();
+        var audio = document.getElementById("yipee");
+        audio.play();
         var duration = 15 * 1000;
         var animationEnd = Date.now() + duration;
         var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
